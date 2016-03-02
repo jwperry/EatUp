@@ -1,16 +1,18 @@
 class SessionsController < ApplicationController
   before_action :set_mock if Rails.env.test?
 
+  def index
+  end
+
   def new
   end
 
   def create
-    binding.pry
-    user = User.find_or_create_by_auth(username: params[:session][:username])
-
-    if user && user.authenticate(params[:session][:password])
+    user = User.find_or_create_by_auth(request.env["omniauth.auth"])
+    if user
       session[:user_id] = user.id
-        redirect_to dashboard_path
+      @user = DashboardPresenter.new(current_user, view_context)
+      redirect_to dashboard_path
     else
       flash[:error] = "Invalid login information."
       redirect_to login_path

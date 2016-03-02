@@ -6,4 +6,8 @@ class DashboardPresenter < SimpleDelegator
     @model = model
     super(@model)
   end
+
+  def test_method
+    "it works"
+  end
 end

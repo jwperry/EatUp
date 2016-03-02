@@ -6,10 +6,10 @@ class CreateUsers < ActiveRecord::Migration
       t.string :last_name
       t.string :email
       t.string :image
-      t.string :password_digest
       t.string :uid
       t.string :provider
-      t.stirng :token
+      t.string :token
+      t.string :expires_at
 
       t.timestamps null: false
     end

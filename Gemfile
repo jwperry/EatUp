@@ -12,6 +12,7 @@ gem "pg"
 gem "omniauth-google-oauth2"
 gem "pry"
 gem "rails_12factor"
+gem "google-api-client"
 
 group :development, :test do
   gem "byebug"
@@ -23,12 +24,15 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem "shoulda-matchers", "~> 3.1"
   gem "simplecov", :require => false
-  gem "vcr"
-  gem "webmock"
 end
 
 group :development do
   gem "web-console", "~> 2.0"
   gem "spring"
   gem "quiet_assets"
+end
+
+group :test do
+    gem "webmock"
+    gem "vcr"
 end
