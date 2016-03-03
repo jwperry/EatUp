@@ -4,6 +4,10 @@ class UsersController < ApplicationController
     @user = DashboardPresenter.new(current_user, view_context)
   end
 
+  def scheduler
+    @user = SchedulerPresenter.new(current_user, view_context)
+  end
+
   private
 
 end

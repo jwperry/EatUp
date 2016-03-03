@@ -1,4 +1,4 @@
-class DashboardPresenter < SimpleDelegator
+class SchedulerPresenter < SimpleDelegator
   attr_reader :view, :model
 
   def initialize(model, view)

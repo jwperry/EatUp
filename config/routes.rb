@@ -7,5 +7,6 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/logout", to: "sessions#destroy"
   get "/dashboard", to: "users#dashboard"
+  get "/scheduler", to: "users#scheduler"
   get '/auth/google_oauth2/callback', to: 'sessions#create'
 end

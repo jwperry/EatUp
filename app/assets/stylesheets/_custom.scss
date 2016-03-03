@@ -49,6 +49,43 @@
 }
 
 //=====DASHBOARD=====
+.dashboard-user-card-wrapper {
+  background-color: $base-white;
+  float: none;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
+
+.dashboard-user-img-card {
+  background-color: $base-white;
+}
+
+.dashboard-user-img {
+  height: 250px;
+  padding: 10px 5px;
+}
+
+.dashboard-user-info-card {
+  background-color: $base-white;
+  padding: 20px 20px;
+}
+
+.dashboard-user-text {
+  color: $base-orange;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5em;
+}
+
+.dashboard-week-card-wrapper {
+  background-color: $base-white;
+  float: none;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
 
 //=====SCHEDULER=====
 
