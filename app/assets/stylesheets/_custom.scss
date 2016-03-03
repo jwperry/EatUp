@@ -1,7 +1,53 @@
 @import "colors";
 
-//=====WELCOME=====
+//=====NAVBAR=====
+.navbar {
+  background-color: $base-navy !important;
+  border-color: $base-orange !important;
+}
+
+.navbar-link {
+  color: $base-orange !important;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 3.5em;
+}
+
+//=====HOME=====
+.home-title-wrapper {
+  margin-top: 10%;
+}
+
+.home-title {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 10.0em;
+  color: $base-orange;
+  text-align: center;
+  -webkit-text-stroke: 2px $base-white;
+  text-shadow: 4px 4px 0 #000
+}
+
+.home-google-login-wrapper {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.home-login-btn {
+  background-color: $base-navy;
+  border-color: $base-orange;
+  color: $base-white;
+  font-family: 'Ubuntu', sans-serif;
+}
 
 //=====DASHBOARD=====
 
 //=====SCHEDULER=====
+
+//=====GENERAL=====
+body {
+  background: url('home-splash.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  background-attachment: fixed;
+}

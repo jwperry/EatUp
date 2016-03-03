@@ -1,28 +1,4 @@
-// -----BASE COLORS-----
-$base-green: #4fc839;
-$base-green-light: lighten($base-green, 12%);
-$base-green-medium: darken($base-green, 6%);
-$base-green-dark: darken($base-green, 15%);
-$base-light-green: #90ff63;
-$base-light-blue: #3af2fc;
-$base-light-blue-light: lighten($base-light-blue, 30%);
-$base-purple-blue: #5692ff;
-$base-purple-blue-dark: darken($base-purple-blue, 20%);
-$base-dark-blue: #0535c4;
-$base-yellow: #fff05a;
-$base-dark-yellow: darken($base-yellow, 25%);
-
-// -----HIGHLIGHT COLORS-----
-$highlight-cyan: #0e887d;
-
-// -----STANDARD COLORS-----
-$white: #fff;
-$black: #000;
-$orange: #ffa500;
-$light-red: #f26363;
-$red: #af0c0c;
-$very-light-red: lighten($red, 40%);
-$dark-red: darken($red, 10%);
-$grey: rgba(#a7a7a7, 0.8);
-$light-grey: #eee;
-$box-shadow: #C5C5C5;
+//=====COLORS=====
+$base-orange: #FB4F14;
+$base-navy: #002244;
+$base-white: #fff;

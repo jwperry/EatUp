@@ -1,0 +1,13 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <%= link_to "EatUp", root_path, class: "navbar-link" %>
+    <% if session[:user_id] %>
+      <%= link_to "Dashboard", dashboard_path, class: "navbar-link" %>
+    <% end %>
+    <% if session[:user_id] %>
+      <%= link_to "Logout", logout_path, class: "navbar-link" %>
+    <% else %>
+      <%= link_to "Login", login_path, class: "navbar-link" %>
+    <% end %>
+  </div>
+</nav>

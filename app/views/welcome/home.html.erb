@@ -1,8 +1,8 @@
-<div class="container-fluid container-home">
-  <div class="col-md-2"></div>
-    <div class="col-md-8">
-      <h1 class="home">Home Page</h1>
-      <%= link_to "Login with Google", "/auth/google_oauth2", client_id: ENV["GOOGLE_CLIENT_ID"], class: "btn btn-lg btn-default btn-home" %>
-    </div>
-  <div class="col-md-2"></div>
+<div class="container-fluid">
+  <div class="row home-title-wrapper">
+    <div class="home-title"><strong>EatUp</strong></div>
+  </div>
+  <div class="home-google-login-wrapper">
+    <%= link_to "Login with Google", "/auth/google_oauth2", client_id: ENV["GOOGLE_CLIENT_ID"], class: "btn btn-lg btn-default btn-home home-login-btn" %>
+  </div>
 </div>
