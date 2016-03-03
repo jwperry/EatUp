@@ -6,10 +6,20 @@
   border-color: $base-orange !important;
 }
 
-.navbar-link {
+.navbar-link-left {
   color: $base-orange !important;
   font-family: 'Ubuntu', sans-serif;
-  font-size: 3.5em;
+  font-size: 1.8em;
+  margin: 5px 10px 5px 10px;
+  padding: 0px 0px 0px 15px;
+}
+
+.navbar-link-right {
+  color: $base-orange !important;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.8em;
+  margin: 5px 10px 5px 10px;
+  padding: 0px 15px 0px 0px;
 }
 
 //=====HOME=====
@@ -19,7 +29,7 @@
 
 .home-title {
   font-family: 'Ubuntu', sans-serif;
-  font-size: 10.0em;
+  font-size: 9.5em;
   color: $base-orange;
   text-align: center;
   -webkit-text-stroke: 2px $base-white;
