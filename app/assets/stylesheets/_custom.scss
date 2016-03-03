@@ -87,7 +87,37 @@
   margin-left: auto;
 }
 
+.dashboard-scheduler-btn {
+  background-color: $base-navy;
+  border-color: $base-orange;
+  color: $base-white;
+  font-family: 'Ubuntu', sans-serif;
+}
+
 //=====SCHEDULER=====
+.scheduler-events-card-wrapper {
+  background-color: $base-white;
+  float: none;
+  margin-top: 100px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
+
+.scheduler-event-text {
+  color: $base-orange;
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 1.5em;
+}
+
+.scheduler-selected-card-wrapper {
+  background-color: $base-white;
+  float: none;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-bottom: 20px;
+  margin-left: auto;
+}
 
 //=====GENERAL=====
 body {
