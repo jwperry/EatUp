@@ -23,4 +23,10 @@ class SessionsController < ApplicationController
     session.clear
     redirect_to "/"
   end
+
+  private
+
+  def set_mock
+    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google]
+  end
 end

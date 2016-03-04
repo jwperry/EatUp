@@ -7,6 +7,7 @@ require "spec_helper"
 require "rspec/rails"
 require "factory_girl_rails"
 require "pry"
+require "vcr"
 # Add additional requires below this line. Rails is not loaded until this point!
 
 # Requires supporting ruby files with custom matchers and macros, etc, in
@@ -27,6 +28,12 @@ Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
 # Checks for pending migration and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
+
+VCR.configure do |c|
+  c.cassette_library_dir = "spec/vcr"
+  c.hook_into :webmock
+  c.allow_http_connections_when_no_cassette = true
+end
 
 RSpec.configure do |config|
   config.before(:suite) do
@@ -88,4 +95,16 @@ Shoulda::Matchers.configure do |config|
     with.test_framework :rspec
     with.library :rails
   end
+
+OmniAuth.config.test_mode = true
+OmniAuth.config.mock_auth[:google] =
+            OmniAuth::AuthHash.new(provider: "google_oauth2",
+                                   uid: ENV["UID"],
+                                   info: { name: "Joseph Perry",
+                                           email: "joseph.w.perry@gmail.com",
+                                           first_name: "Joseph",
+                                           last_name: "Perry",
+                                           image: "https://lh4.googleusercontent.com/-lbxDygyyK8U/AAAAAAAAAAI/AAAAAAAAABI/IbZcoygAmGY/photo.jpg",
+                                           },
+                                   credentials: { token: ENV["USER_TOKEN"], expires_at: ENV["EXPIRES_AT"] })
 end
