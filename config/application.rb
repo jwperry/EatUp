@@ -30,7 +30,5 @@ module EatUp
     # config.i18n.default_locale = :de
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
-    ENV['SSL_CERT_FILE'] = Gem.loaded_specs['google-api-client'].full_gem_path+'/lib/cacerts.pem'
-    config.active_record.raise_in_transactional_callbacks = true
   end
 end

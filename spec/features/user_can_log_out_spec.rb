@@ -5,7 +5,7 @@ RSpec.feature "UserCanLogOut", vcr: true do
     it "allows user to log out" do
       visit '/'
 
-      click_on "Log In With Google"
+      click_on "Log In With MeetUp"
 
       expect(page).to have_content("Joseph")
       expect(page).to have_content("Perry")

@@ -97,7 +97,7 @@ Shoulda::Matchers.configure do |config|
   end
 
 OmniAuth.config.test_mode = true
-OmniAuth.config.mock_auth[:google] =
+OmniAuth.config.mock_auth[:meetup] =
             OmniAuth::AuthHash.new(provider: "google_oauth2",
                                    uid: ENV["UID"],
                                    info: { name: "Joseph Perry",

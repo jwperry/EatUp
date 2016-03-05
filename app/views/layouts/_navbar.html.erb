@@ -7,7 +7,7 @@
     <% if session[:user_id] %>
       <%= link_to "Log out", logout_path, class: "navbar-link-right pull-right" %>
     <% else %>
-      <%= link_to "Log in", "/auth/google_oauth2", client_id: ENV["GOOGLE_CLIENT_ID"], class: "navbar-link-right pull-right" %>
+      <%= link_to "Log in", "https://secure.meetup.com/oauth2/authorize", client_id: ENV["MEETUP_CONSUMER_KEY"], response_type: "code", class: "navbar-link-right pull-right" %>
     <% end %>
   </div>
 </nav>

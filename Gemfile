@@ -10,10 +10,9 @@ gem "sdoc", "~> 0.4.0", group: :doc
 gem "bcrypt", "~> 3.1.7"
 gem "figaro"
 gem "pg"
-gem "omniauth-google-oauth2"
 gem "pry"
 gem "rails_12factor"
-gem "google-api-client"
+gem "omniauth-meetup"
 
 group :development, :test do
   gem "byebug"

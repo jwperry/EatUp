@@ -8,6 +8,7 @@ class SessionsController < ApplicationController
   end
 
   def create
+    binding.pry
     user = User.find_or_create_by_auth(request.env["omniauth.auth"])
     if user
       session[:user_id] = user.id
@@ -27,6 +28,6 @@ class SessionsController < ApplicationController
   private
 
   def set_mock
-    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:google]
+    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:meetup]
   end
 end
