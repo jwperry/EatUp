@@ -43,13 +43,13 @@ describe "MeetupService" do
   #   end
   # end
 
-  context "#groups" do
-    it "returns groups" do
-      VCR.use_cassette("meetup_service#groups") do
-        groups = @meetup_service.groups
-        binding.pry
-      end
-    end
-  end
+  # context "#groups" do
+  #   it "returns groups" do
+  #     VCR.use_cassette("meetup_service#groups") do
+  #       groups = @meetup_service.groups
+  #       binding.pry
+  #     end
+  #   end
+  # end
 
 end
