@@ -2,12 +2,12 @@
   <div class="row">
     <%= link_to "EatUp", root_path, class: "navbar-link-left pull-left" %>
     <% if session[:user_id] %>
-      <%= link_to "Dashboard", dashboard_path, class: "navbar-link-right pull-right" %>
-    <% end %>
-    <% if session[:user_id] %>
       <%= link_to "Log out", logout_path, class: "navbar-link-right pull-right" %>
     <% else %>
-      <%= link_to "Log in", "https://secure.meetup.com/oauth2/authorize", client_id: ENV["MEETUP_CONSUMER_KEY"], response_type: "code", class: "navbar-link-right pull-right" %>
+      <%= link_to "Log in", "https://secure.meetup.com/oauth2/authorize?client_id=#{ENV['MEETUP_CONSUMER_KEY']}&response_type=code&redirect_uri=#{ENV['HOST']}/login&scope=basic+ageless", class: "navbar-link-right pull-right" %>
+    <% end %>
+    <% if session[:user_id] %>
+      <%= link_to "Dashboard", dashboard_path, class: "navbar-link-right pull-right" %>
     <% end %>
   </div>
 </nav>

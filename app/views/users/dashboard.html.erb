@@ -2,11 +2,12 @@
   <!-- USER CARD STARTS -->
   <div class="row dashboard-user-card-wrapper col-md-8">
     <div class="dashboard-user-img-card col-xs-12 col-sm-6">
-      <%= image_tag "brock.png", class: "dashboard-user-img img-circle center-block" %>
+      <%= image_tag current_user.photo, class: "dashboard-user-img img-circle center-block" %>
     </div>
     <div class="dashboard-user-info-card col-xs-12 col-sm-4">
       <h4 class="dashboard-user-text">Name: <%= current_user.name %></h4><br>
-      <h4 class="dashboard-user-text">Email: <%= current_user.email %></h4><br>
+      <h4 class="dashboard-user-text">City: <%= current_user.city %></h4><br>
+      <h4 class="dashboard-user-text">State: <%= current_user.state %></h4><br>
       <div class="row">
         <%= link_to "Scheduler", scheduler_path, class: "btn btn-lg btn-default btn-home dashboard-scheduler-btn" %>
       </div>

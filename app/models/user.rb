@@ -1,13 +1,15 @@
 class User < ActiveRecord::Base
-  def self.find_or_create_by_auth(auth)
-    user = User.find_or_create_by(provider: auth['provider'], uid: auth['uid'])
-    user.name = auth['info']['name']
-    user.first_name = auth['info']['first_name']
-    user.last_name = auth['info']['last_name']
-    user.email = auth['info']['email']
-    user.image = auth['info']['image']
-    user.token = auth['credentials']['token']
-    user.expires_at = auth['credentials']['expires_at']
+  def self.find_or_create_by_auth(response, user_info)
+    user = User.find_or_create_by(meetup_id: user_info[:id])
+    user.name = user_info[:name]
+    user.status = user_info[:status]
+    user.city = user_info[:city]
+    user.country = user_info[:country]
+    user.state = user_info[:state]
+    user.lat = user_info[:lat]
+    user.lon = user_info[:lon]
+    user.photo = user_info[:photo][:highres_link]
+    user.token = response[:access_token]
     user.save
     user
   end

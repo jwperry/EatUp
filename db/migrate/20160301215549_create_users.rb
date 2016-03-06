@@ -1,15 +1,16 @@
 class CreateUsers < ActiveRecord::Migration
   def change
     create_table :users do |t|
+      t.integer :meetup_id
+      t.string :status
       t.string :name
-      t.string :first_name
-      t.string :last_name
-      t.string :email
-      t.string :image
-      t.string :uid
-      t.string :provider
+      t.string :city
+      t.string :state
+      t.string :country
+      t.string :photo
+      t.integer :lat
+      t.integer :lon
       t.string :token
-      t.string :expires_at
 
       t.timestamps null: false
     end
