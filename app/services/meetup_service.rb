@@ -2,6 +2,7 @@ require 'open-uri'
 
 class MeetupService
   attr_reader :connection
+  include Key
 
   def initialize(current_user)
     @current_user = current_user
@@ -17,8 +18,22 @@ class MeetupService
     parse(connection.get("/2/open_events?country=#{@current_user.country}&state=#{@current_user.state}&city=#{@current_user.city}"))
   end
 
+  def matching_open_events
+    events = self.open_events
+    events[:results].select do |event|
+      match_key.any? { |word| event[:description].include?(word) if event[:description] }
+    end
+  end
+
   def group_events
     parse(connection.get("/2/events?member_id=#{@current_user.meetup_id}"))
+  end
+
+  def matching_group_events
+    events = self.group_events
+    events[:results].select do |event|
+      match_key.any? { |word| event[:description].include?(word) if event[:description] }
+    end
   end
 
   private

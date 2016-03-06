@@ -1,4 +1,5 @@
 require 'rails_helper'
+include Key
 
 describe "MeetupService" do
 
@@ -29,6 +30,18 @@ describe "MeetupService" do
     end
   end
 
+  context "#matching_open_events" do
+    it "returns matching_open_events" do
+      VCR.use_cassette("meetup_service#matching_open_events") do
+        matching_open_events = @meetup_service.matching_open_events
+        all_matches = matching_open_events.all? do |event|
+          match_key.any? { |word| event[:description].include?(word) }
+        end
+        expect(all_matches).to be true
+      end
+    end
+  end
+
   context "#group_events" do
     it "returns group_events" do
       VCR.use_cassette("meetup_service#group_events") do
@@ -43,4 +56,15 @@ describe "MeetupService" do
     end
   end
 
+  context "#matching_group_events" do
+    it "returns matching_group_events" do
+      VCR.use_cassette("meetup_service#matching_group_events") do
+        matching_group_events = @meetup_service.matching_group_events
+        all_matches = matching_group_events.all? do |event|
+          match_key.any? { |word| event[:description].include?(word) }
+        end
+        expect(all_matches).to be true
+      end
+    end
+  end
 end
