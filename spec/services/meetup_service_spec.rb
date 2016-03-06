@@ -15,12 +15,32 @@ describe "MeetupService" do
     @meetup_service = MeetupService.new(@user)
   end
 
-  context "#groups" do
-    it "returns groups" do
-      VCR.use_cassette("meetup_service#groups") do
-        groups = @meetup_service.groups
+  context "#open_events" do
+    it "returns open_events" do
+      VCR.use_cassette("meetup_service#open_events") do
+        open_events = @meetup_service.open_events
+        expect(open_events[:results].count).to be > 0
+        expect(open_events[:results].first.has_key?(:utc_offset)).to be true
+        expect(open_events[:results].first.has_key?(:visibility)).to be true
+        expect(open_events[:results].first.has_key?(:created)).to be true
+        expect(open_events[:results].first.has_key?(:description)).to be true
+        expect(open_events[:results].first.has_key?(:group)).to be true
       end
     end
-  end  
+  end
+
+  context "#group_events" do
+    it "returns group_events" do
+      VCR.use_cassette("meetup_service#group_events") do
+        group_events = @meetup_service.group_events
+        expect(group_events[:results].count).to be > 0
+        expect(group_events[:results].first.has_key?(:utc_offset)).to be true
+        expect(group_events[:results].first.has_key?(:visibility)).to be true
+        expect(group_events[:results].first.has_key?(:created)).to be true
+        expect(group_events[:results].first.has_key?(:description)).to be true
+        expect(group_events[:results].first.has_key?(:group)).to be true
+      end
+    end
+  end
 
 end

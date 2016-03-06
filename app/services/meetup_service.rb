@@ -13,9 +13,13 @@ class MeetupService
     end
   end
 
-  # def groups
-  #   parse(connection.get("/2/groups?member_id=#{@current_user.meetup_id}"))
-  # end
+  def open_events
+    parse(connection.get("/2/open_events?country=#{@current_user.country}&state=#{@current_user.state}&city=#{@current_user.city}"))
+  end
+
+  def group_events
+    parse(connection.get("/2/events?member_id=#{@current_user.meetup_id}"))
+  end
 
   private
 
