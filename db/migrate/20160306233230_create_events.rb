@@ -5,12 +5,11 @@ class CreateEvents < ActiveRecord::Migration
       t.integer :utc_offset
       t.string :country
       t.string :city
-      t.string :zip
       t.string :state
       t.integer :distance
       t.text :description
       t.string :name
-      t.integer :meetup_event_id
+      t.string :meetup_event_id
       t.datetime :time
       t.string :group
       t.string :status

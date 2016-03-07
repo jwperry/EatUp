@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  before_action :set_mock if Rails.env.test?
 
   def index
   end
@@ -28,10 +27,7 @@ class SessionsController < ApplicationController
 
   private
 
-  def set_mock
-    request.env["omniauth.auth"] = OmniAuth.config.mock_auth[:meetup]
-  end
-
+  # Move to own PORO
   def request_token(code)
     conn = Faraday.new(url: "https://secure.meetup.com/oauth2/access") do |faraday|
       faraday.adapter Faraday.default_adapter
@@ -52,6 +48,6 @@ class SessionsController < ApplicationController
       faraday.params[:sign] = "true"
       faraday.params[:access_token] = token
     end
-    response = JSON.parse(conn.get("/members/self").body, symbolize_names: true)
+    JSON.parse(conn.get("/members/self").body, symbolize_names: true)
   end
 end

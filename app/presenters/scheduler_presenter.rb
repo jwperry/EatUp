@@ -24,4 +24,7 @@ class SchedulerPresenter < SimpleDelegator
   def convert_to_json(event)
     event.to_json
   end
+
+  def wrap_matches(events)
+  end
 end
