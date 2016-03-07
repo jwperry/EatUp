@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :events
+
   def self.find_or_create_by_auth(response, user_info)
     user = User.find_or_create_by(meetup_id: user_info[:id])
     user.name = user_info[:name]
