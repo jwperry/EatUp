@@ -90,7 +90,7 @@ FactoryGirl.define do
   end
 
   sequence :time do |n|
-    Date.strptime((((1480483400000 + (n * 200000000)).to_f / 1000).to_s), '%s')
+    DateTime.strptime((((1480483400000 + (n * 200000000)).to_f / 1000).to_s), '%s')
   end
 
   sequence :group do |n|

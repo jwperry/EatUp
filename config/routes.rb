@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users, only: [:edit, :update]
+  resources :events, only: [:create]
 
   root "welcome#home"
   get "/login", to: "sessions#create"

@@ -1,12 +1,66 @@
+<script type="text/javascript">
+  $(function(){
+    $(".scheduler-events-card-wrapper").on("dblclick", ".scheduler-event-wrapper", function(){
+      $(this).hide().appendTo(".scheduler-selected-card-wrapper").fadeIn("slow");
+    });
+
+    $(".scheduler-selected-card-wrapper").on("dblclick",  ".scheduler-event-wrapper", function(){
+      $(this).hide().appendTo(".scheduler-events-card-wrapper").fadeIn("slow");
+    });
+  
+  $("#cancel-button").click(function(){
+      $(".scheduler-selected-card-wrapper .scheduler-event-wrapper").each(function(){
+        $(this).hide().appendTo(".scheduler-events-card-wrapper").fadeIn("slow");
+      });
+    });
+      
+    $("#save-button").click(function(){
+      var events = [];
+
+      $(".scheduler-selected-card-wrapper .scheduler-event-wrapper").each(function(){
+        var event=$(this).data("event");
+        events.push(event);
+      });
+
+
+      $.ajax({
+        method: "POST",
+        contentType: "application/json",
+        url: "/events",
+        data: JSON.stringify(events)
+      });
+    });
+  });
+</script>
+
 <div class="container-fluid">
   <!-- MATCHING EVENTS CARD STARTS -->
   <div class="row scheduler-events-card-wrapper col-md-8">
     <h3 class="scheduler-event-text">MATCHING EVENTS GO HERE</h3>
-  </div>
+      <% @presenter.matching_events.each do |event| %>
+        <div class="row scheduler-event-wrapper" data-event="<%=@presenter.convert_to_json(event)%>" >
+          <h4>
+            <%= event[:name] %>
+            <%= event[:group][:name] %>
+            <%= @presenter.display_local_time(event) %>
+          </h4>
+          <h5>
+            <%= event[:description][0..250] %>
+            <%= "..." if event[:description].length > 250 %>
+          </h5>
+        </div>
+      <% end %>
+  </div>"
   <!-- MATCHING EVENTS CARD ENDS -->
   <!-- SELECTED EVENTS STARTS -->
   <div class="row scheduler-selected-card-wrapper col-md-8">
     <h4 class="scheduler-event-text">SELECTED EVENTS GO HERE</h4>
   </div>
   <!-- SELECTED EVENTS ENDS -->
+  <div class="row scheduler-form">
+    <form>
+      <button id="save-button">Save</button>
+      <button id="cancel-button">Clear</button>
+    </form>
+  </div>
 </div>
