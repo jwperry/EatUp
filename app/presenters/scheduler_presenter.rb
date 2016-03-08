@@ -10,9 +10,9 @@ class SchedulerPresenter < SimpleDelegator
 
   def matching_events
     service = MeetupService.new(model)
-    open = service.matching_open_events
-    group = service.matching_group_events
-    group + open
+    events = service.matching_open_events + service.matching_group_events
+    existing = model.events.map { |event| event.meetup_event_id }
+    events.select { |event| !(existing.include?(event[:id])) }
   end
 
   def display_local_time(event)
@@ -23,8 +23,5 @@ class SchedulerPresenter < SimpleDelegator
 
   def convert_to_json(event)
     event.to_json
-  end
-
-  def wrap_matches(events)
   end
 end

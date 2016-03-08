@@ -8,13 +8,13 @@
       $(this).hide().appendTo(".scheduler-events-card-wrapper").fadeIn("slow");
     });
   
-  $("#cancel-button").click(function(){
+  $(".clear-button").click(function(){
       $(".scheduler-selected-card-wrapper .scheduler-event-wrapper").each(function(){
         $(this).hide().appendTo(".scheduler-events-card-wrapper").fadeIn("slow");
       });
     });
       
-    $("#save-button").click(function(){
+    $(".save-button").click(function(){
       var events = [];
 
       $(".scheduler-selected-card-wrapper .scheduler-event-wrapper").each(function(){
@@ -37,7 +37,7 @@
 <div class="container-fluid">
   <!-- MATCHING EVENTS CARD STARTS -->
   <div class="row scheduler-events-card-wrapper col-md-8">
-    <h3 class="scheduler-event-text">MATCHING EVENTS GO HERE</h3>
+    <h3 class="scheduler-event-text">AVAILABLE EVENTS</h3>
       <% @presenter.matching_events.each do |event| %>
         <div class="row scheduler-event-wrapper" data-event="<%=@presenter.convert_to_json(event)%>" >
           <h4>
@@ -55,13 +55,13 @@
   <!-- MATCHING EVENTS CARD ENDS -->
   <!-- SELECTED EVENTS STARTS -->
   <div class="row scheduler-selected-card-wrapper col-md-8">
-    <h4 class="scheduler-event-text">SELECTED EVENTS GO HERE</h4>
+    <h4 class="scheduler-event-text">SELECTED EVENTS</h4>
   </div>
   <!-- SELECTED EVENTS ENDS -->
-  <div class="row scheduler-form">
-    <form>
-      <button id="save-button">Save</button>
-      <button id="cancel-button">Clear</button>
-    </form>
+  <div class="row-fluid scheduler-buttons-wrapper col-md-8">
+  <form>
+    <button class="save-button">Save</button>
+    <button class="clear-button">Clear</button>
+  </form>
   </div>
 </div>
