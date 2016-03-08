@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20160306233230) do
 
   create_table "events", force: :cascade do |t|
     t.integer  "user_id"
-    t.integer  "utc_offset"
+    t.integer  "utc_offset",      limit: 8
     t.string   "country"
     t.string   "city"
     t.string   "state"
@@ -26,11 +26,11 @@ ActiveRecord::Schema.define(version: 20160306233230) do
     t.text     "description"
     t.string   "name"
     t.string   "meetup_event_id"
-    t.datetime "time"
+    t.integer  "time",            limit: 8
     t.string   "group"
     t.string   "status"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
   end
 
   add_index "events", ["user_id"], name: "index_events_on_user_id", using: :btree
