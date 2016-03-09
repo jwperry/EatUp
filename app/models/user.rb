@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
     user.state = user_info[:state]
     user.lat = user_info[:lat]
     user.lon = user_info[:lon]
-    user.photo = user_info[:photo][:highres_link]
+    user.photo = user_info[:photo][:photo_link]
     user.token = response[:access_token]
     user.save
     user
