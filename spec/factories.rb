@@ -5,7 +5,7 @@ FactoryGirl.define do
     status
     name
     city
-    state
+    state "CO"
     country "us"
     photo "http://photos4.meetupstatic.com/photos/member/7/8/2/9/highres_254490761.jpeg"
     lat
@@ -51,10 +51,6 @@ FactoryGirl.define do
 
   sequence :city do |n|
     "city#{n}"
-  end
-
-  sequence :state do |n|
-    "state#{n}"
   end
 
   sequence :lat do |n|

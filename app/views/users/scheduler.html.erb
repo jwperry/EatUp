@@ -1,41 +1,4 @@
-<script type="text/javascript">
-  $(function(){
-    $(".scheduler-events-card-wrapper").on("dblclick", ".scheduler-event-wrapper", function(){
-      $(this).hide().appendTo(".scheduler-selected-card-wrapper").fadeIn("slow");
-    });
-
-    $(".scheduler-selected-card-wrapper").on("dblclick",  ".scheduler-event-wrapper", function(){
-      $(this).hide().appendTo(".scheduler-events-card-wrapper").fadeIn("slow");
-    });
-  
-  $(".clear-button").click(function(){
-      $(".scheduler-selected-card-wrapper .scheduler-event-wrapper").each(function(){
-        $(this).hide().appendTo(".scheduler-events-card-wrapper").fadeIn("slow");
-      });
-    });
-      
-    $(".save-button").click(function(){
-      var events = [];
-
-      $(".scheduler-selected-card-wrapper .scheduler-event-wrapper").each(function(){
-        var event=$(this).data("event");
-        events.push(event);
-      });
-
-
-      $.ajax({
-        method: "POST",
-        contentType: "application/json",
-        url: "/events",
-        data: JSON.stringify(events)
-      });
-      
-    });
-  });
-</script>
-
 <div class="container-fluid">
-  <!-- MATCHING EVENTS CARD STARTS -->
   <div class="row scheduler-events-card-wrapper col-md-8">
     <h3 class="scheduler-event-text">AVAILABLE EVENTS</h3>
       <% @presenter.matching_events.each do |event| %>
@@ -52,12 +15,9 @@
         </div>
       <% end %>
   </div>"
-  <!-- MATCHING EVENTS CARD ENDS -->
-  <!-- SELECTED EVENTS STARTS -->
   <div class="row scheduler-selected-card-wrapper col-md-8">
     <h4 class="scheduler-event-text">SELECTED EVENTS</h4>
   </div>
-  <!-- SELECTED EVENTS ENDS -->
   <div class="row-fluid scheduler-buttons-wrapper col-md-8">
   <form>
     <button class="save-button">Save</button>

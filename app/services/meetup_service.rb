@@ -20,7 +20,7 @@ class MeetupService
 
   def matching_open_events
     events = self.open_events
-    if events
+    if events && events[:results]
       events[:results].select do |event|
         match_key.any? { |word| event[:description].include?(word) if event[:description] }
       end

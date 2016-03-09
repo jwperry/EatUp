@@ -10,7 +10,9 @@ class SchedulerPresenter < SimpleDelegator
 
   def matching_events
     service = MeetupService.new(model)
-    events = service.matching_open_events + service.matching_group_events
+    open_events = service.matching_open_events || []
+    group_events = service.matching_group_events || []
+    events = open_events + group_events
     existing = model.events.map { |event| event.meetup_event_id }
     events.select { |event| !(existing.include?(event[:id])) }
   end

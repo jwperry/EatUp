@@ -14,6 +14,7 @@ gem "pg"
 gem "pry"
 gem "rails_12factor"
 gem "omniauth-meetup"
+gem "selenium-webdriver"
 
 group :development, :test do
   gem "byebug"
@@ -25,6 +26,7 @@ group :development, :test do
   gem "factory_girl_rails", "~> 4.0"
   gem "shoulda-matchers", "~> 3.1"
   gem "simplecov", :require => false
+  gem 'mocha'
 end
 
 group :development do
