@@ -12,7 +12,6 @@ gem "bcrypt", "~> 3.1.7"
 gem "figaro"
 gem "pg"
 gem "pry"
-gem "rails_12factor"
 gem "omniauth-meetup"
 gem "selenium-webdriver"
 
@@ -38,4 +37,8 @@ end
 group :test do
     gem "webmock"
     gem "vcr"
+end
+
+group :production do
+  gem "rails_12factor"
 end
