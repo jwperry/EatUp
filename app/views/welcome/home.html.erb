@@ -3,5 +3,5 @@
     <div class="home-title"><strong>EatUp</strong></div>
   </div>
   <div class="home-meetup-login-wrapper">
-    <%= link_to "Log In With MeetUp", "https://secure.meetup.com/oauth2/authorize?client_id=#{ENV['MEETUP_CONSUMER_KEY']}&response_type=code&redirect_uri=#{ENV['HOST']}/login", class: "btn btn-lg btn-default btn-home home-login-btn" %>
+    <%= link_to "Log In With MeetUp", "https://secure.meetup.com/oauth2/authorize?client_id=#{ENV['MEETUP_CONSUMER_KEY']}&response_type=code&redirect_uri=http://eatup-turing.herokuapp.com/login", class: "btn btn-lg btn-default btn-home home-login-btn" %>
   </div>
