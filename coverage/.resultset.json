@@ -40,7 +40,7 @@
         null,
         null
       ],
-      "/Users/Jet/turing/3module/EatUp/app/requests/events_controller.rb": [
+      "/Users/Jet/turing/3module/EatUp/app/controllers/events_controller.rb": [
         1,
         null,
         1,
@@ -50,7 +50,7 @@
         null,
         null
       ],
-      "/Users/Jet/turing/3module/EatUp/app/requests/application_controller.rb": [
+      "/Users/Jet/turing/3module/EatUp/app/controllers/application_controller.rb": [
         1,
         1,
         1,
@@ -94,13 +94,13 @@
         null,
         null
       ],
-      "/Users/Jet/turing/3module/EatUp/app/requests/welcome_controller.rb": [
+      "/Users/Jet/turing/3module/EatUp/app/controllers/welcome_controller.rb": [
         1,
         1,
         null,
         null
       ],
-      "/Users/Jet/turing/3module/EatUp/app/requests/users_controller.rb": [
+      "/Users/Jet/turing/3module/EatUp/app/controllers/users_controller.rb": [
         1,
         null,
         1,
@@ -233,7 +233,7 @@
         null,
         null
       ],
-      "/Users/Jet/turing/3module/EatUp/app/requests/sessions_controller.rb": [
+      "/Users/Jet/turing/3module/EatUp/app/controllers/sessions_controller.rb": [
         0,
         0,
         0,
@@ -289,6 +289,6 @@
         0
       ]
     },
-    "timestamp": 1457560092
+    "timestamp": 1457560451
   }
 }
