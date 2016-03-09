@@ -26,8 +26,7 @@ FactoryGirl.define do
     utc_offset -25200000
     country "us"
     city
-    zip
-    state
+    state "CO"
     distance
     description
     name
@@ -82,7 +81,7 @@ FactoryGirl.define do
   end
 
   sequence :meetup_event_id do |n|
-    n
+    "event_id_#{n}"
   end
 
   sequence :time do |n|

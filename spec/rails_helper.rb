@@ -10,6 +10,7 @@ require "pry"
 require "vcr"
 require "capybara/rails"
 require "capybara/rspec"
+require "rails_helper"
 
 Capybara.javascript_driver = :selenium
 # Add additional requires below this line. Rails is not loaded until this point!
