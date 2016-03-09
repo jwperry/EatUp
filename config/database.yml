@@ -81,5 +81,5 @@ test:
 production:
   <<: *default
   database: EatUp_production
-  username: EatUp
-  password: <%= ENV['EATUP_DATABASE_PASSWORD'] %>
+  # username: EatUp
+  # password: <%= ENV['EATUP_DATABASE_PASSWORD'] %>
