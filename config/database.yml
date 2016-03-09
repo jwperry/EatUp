@@ -82,4 +82,4 @@ production:
   <<: *default
   database: EatUp_production
   username: EatUp
-  password: <%= ENV['EATUP_DATABASE_PASSWORD'] %>
+  #password: <%= ENV['EATUP_DATABASE_PASSWORD'] %>
