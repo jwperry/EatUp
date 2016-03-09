@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-09T00:09:57-07:00">2016-03-09T00:09:57-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-09T14:48:12-07:00">2016-03-09T14:48:12-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         558.58
+         565.25
        </span>
     </span> hits/line)
   </h2>
@@ -97,7 +97,7 @@
         <td>20</td>
         <td>20</td>
         <td>0</td>
-        <td>29.5</td>
+        <td>29.8</td>
       </tr>
       
       <tr>
@@ -157,7 +157,7 @@
         <td>28</td>
         <td>28</td>
         <td>0</td>
-        <td>3285.7</td>
+        <td>3325.0</td>
       </tr>
       
       <tr>
@@ -167,7 +167,7 @@
         <td>3</td>
         <td>3</td>
         <td>0</td>
-        <td>955.0</td>
+        <td>966.7</td>
       </tr>
       
     </tbody>
@@ -398,7 +398,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         955.0
+         966.7
        </span>
     </span> hits/line)
   </h2>
@@ -430,7 +430,7 @@
         <td>3</td>
         <td>3</td>
         <td>0</td>
-        <td>955.0</td>
+        <td>966.7</td>
       </tr>
       
     </tbody>
@@ -445,7 +445,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         638.9
+         646.53
        </span>
     </span> hits/line)
   </h2>
@@ -487,7 +487,7 @@
         <td>20</td>
         <td>20</td>
         <td>0</td>
-        <td>29.5</td>
+        <td>29.8</td>
       </tr>
       
       <tr>
@@ -547,7 +547,7 @@
         <td>28</td>
         <td>28</td>
         <td>0</td>
-        <td>3285.7</td>
+        <td>3325.0</td>
       </tr>
       
     </tbody>
@@ -1161,8 +1161,8 @@
           <code class="ruby">    existing = model.events.map { |event| event.meetup_event_id }</code>
         </li>
       
-        <li class="covered" data-hits="115" data-linenumber="17">
-          <span class="hits">115</span>
+        <li class="covered" data-hits="116" data-linenumber="17">
+          <span class="hits">116</span>
           
           <code class="ruby">    events.select { |event| !(existing.include?(event[:id])) }</code>
         </li>
@@ -1185,20 +1185,20 @@
           <code class="ruby">  def display_local_time(event)</code>
         </li>
       
-        <li class="covered" data-hits="113" data-linenumber="21">
-          <span class="hits">113</span>
+        <li class="covered" data-hits="114" data-linenumber="21">
+          <span class="hits">114</span>
           
           <code class="ruby">    time = ((event[:time] + event[:utc_offset].to_f)/1000).to_s</code>
         </li>
       
-        <li class="covered" data-hits="113" data-linenumber="22">
-          <span class="hits">113</span>
+        <li class="covered" data-hits="114" data-linenumber="22">
+          <span class="hits">114</span>
           
           <code class="ruby">    date = DateTime.strptime((time), &#39;%s&#39;)</code>
         </li>
       
-        <li class="covered" data-hits="113" data-linenumber="23">
-          <span class="hits">113</span>
+        <li class="covered" data-hits="114" data-linenumber="23">
+          <span class="hits">114</span>
           
           <code class="ruby">    date.strftime(&quot;%m/%d/%Y %l:%M %P&quot;)</code>
         </li>
@@ -1221,8 +1221,8 @@
           <code class="ruby">  def convert_to_json(event)</code>
         </li>
       
-        <li class="covered" data-hits="113" data-linenumber="27">
-          <span class="hits">113</span>
+        <li class="covered" data-hits="114" data-linenumber="27">
+          <span class="hits">114</span>
           
           <code class="ruby">    event.to_json</code>
         </li>
@@ -2115,8 +2115,8 @@
           <code class="ruby">      events[:results].select do |event|</code>
         </li>
       
-        <li class="covered" data-hits="76147" data-linenumber="25">
-          <span class="hits">76147</span>
+        <li class="covered" data-hits="77082" data-linenumber="25">
+          <span class="hits">77082</span>
           
           <code class="ruby">        match_key.any? { |word| event[:description].include?(word) if event[:description] }</code>
         </li>
@@ -2193,8 +2193,8 @@
           <code class="ruby">      events[:results].select do |event|</code>
         </li>
       
-        <li class="covered" data-hits="15771" data-linenumber="38">
-          <span class="hits">15771</span>
+        <li class="covered" data-hits="15936" data-linenumber="38">
+          <span class="hits">15936</span>
           
           <code class="ruby">        match_key.any? { |word| event[:description].include?(word) if event[:description] }</code>
         </li>
@@ -2289,8 +2289,8 @@
           <code class="ruby">  def match_key</code>
         </li>
       
-        <li class="covered" data-hits="2863" data-linenumber="3">
-          <span class="hits">2863</span>
+        <li class="covered" data-hits="2898" data-linenumber="3">
+          <span class="hits">2898</span>
           
           <code class="ruby">    [&quot;free food&quot;, &quot;free pizza&quot;, &quot;free slice&quot;, &quot;free snacks&quot;, &quot;free sandwich&quot;,</code>
         </li>
