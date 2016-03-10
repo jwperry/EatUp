@@ -1,5 +1,4 @@
 <div class="container-fluid">
-  <!-- USER CARD STARTS -->
   <div class="row dashboard-user-card-wrapper col-md-8">
     <div class="dashboard-user-img-card col-xs-12 col-sm-6">
       <%= image_tag current_user.photo, class: "dashboard-user-img img-circle center-block" %>
@@ -13,8 +12,6 @@
       </div>
     </div>
   </div>
-  <!-- USER CARD ENDS -->
-  <!-- THIS WEEK STARTS -->
   <div class="row dashboard-week-card-wrapper col-md-8">
     <h4 class="dashboard-user-text">THIS WEEK'S EVENTS</h4>
     <% @presenter.current_events.each do |event| %>
@@ -24,15 +21,12 @@
           <%= event.group %>
           <%= @presenter.display_local_time(event) %>
         </h4>
-        <h5>
-          <%= event.description[0..250] %>
-          <%= "..." if event[:description].length > 250 %>
-        </h5>
+        <div class="description-text">
+          <%= event.description %>
+        </div>
       </div>
     <% end %>
   </div>
-  <!-- THIS WEEK ENDS -->
-  <!-- HISTORY STARTS -->
   <div class="row dashboard-history-card-wrapper col-md-8">
     <h4 class="dashboard-user-text">HISTORY OF SELECTED EVENTS</h4>
     <% @presenter.historical_events.each do |event| %>
@@ -42,12 +36,10 @@
             <%= event.group %>
             <%= @presenter.display_local_time(event) %>
           </h4>
-          <h5>
-            <%= event.description[0..250] %>
-            <%= "..." if event[:description].length > 250 %>
-          </h5>
+          <div class="description-text">
+            <%= event.description %>
+          </div>
         </div>
       <% end %>
   </div>
-  <!-- HISTORY ENDS -->
 </div>
