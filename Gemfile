@@ -13,7 +13,6 @@ gem "figaro"
 gem "pg"
 gem "pry"
 gem "omniauth-meetup"
-gem "selenium-webdriver"
 
 group :development, :test do
   gem "byebug"
