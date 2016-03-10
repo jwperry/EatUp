@@ -1,15 +1,15 @@
 class DashboardPresenter < SimpleDelegator
-  attr_reader :view, :model
+  attr_reader :view, :current_user
   require 'date'
 
-  def initialize(model, view)
+  def initialize(current_user, view)
     @view = view
-    @model = model
-    super(@model)
+    @current_user = current_user
+    super(@current_user)
   end
 
   def historical_events
-    @model.events
+    @current_user.events
   end
 
   def display_local_time(event)
@@ -20,7 +20,7 @@ class DashboardPresenter < SimpleDelegator
 
   def current_events
     current_time = DateTime.now.strftime('%Q').to_i
-    @model.events.select do |event|
+    @current_user.events.select do |event|
       ((event.time + event.utc_offset) - (current_time + event.utc_offset)) <= 604800000
     end.reverse
   end

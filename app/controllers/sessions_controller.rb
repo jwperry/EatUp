@@ -37,9 +37,10 @@ class SessionsController < ApplicationController
       faraday.params[:client_secret] = ENV["MEETUP_CONSUMER_SECRET"]
       faraday.params[:grant_type] = "authorization_code"
       faraday.params[:redirect_uri] = "#{ENV['HOST']}/login"
-      faraday.params[:state] = "JWPERRY"
     end
-    JSON.parse(conn.post("https://secure.meetup.com/oauth2/access").body, symbolize_names: true)
+    response = JSON.parse(conn.post("https://secure.meetup.com/oauth2/access").body, symbolize_names: true)
+    conn = nil
+    response
   end
 
   def request_user_info(token)
@@ -48,8 +49,9 @@ class SessionsController < ApplicationController
       faraday.params[:key] = ENV["MEETUP_API_KEY"]
       faraday.params[:sign] = "true"
       faraday.params[:access_token] = token
-      faraday.params[:state] = "JWPERRY"
     end
-    JSON.parse(conn.get("/members/self").body, symbolize_names: true)
+    user_info = JSON.parse(conn.get("/members/self").body, symbolize_names: true)
+    conn = nil
+    user_info
   end
 end

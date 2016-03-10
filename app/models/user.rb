@@ -3,7 +3,6 @@ class User < ActiveRecord::Base
 
   def self.find_or_create_by_auth(response, user_info)
     user = User.find_or_create_by(meetup_id: user_info[:id])
-    binding.pry
     user.name = user_info[:name]
     user.status = user_info[:status]
     user.city = user_info[:city]

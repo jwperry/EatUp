@@ -14,7 +14,7 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-09T15:54:53-07:00">2016-03-09T15:54:53-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-09T16:29:55-07:00">2016-03-09T16:29:55-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -25,7 +25,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         565.25
+         565.32
        </span>
     </span> hits/line)
   </h2>
@@ -123,7 +123,7 @@
       <tr>
         <td class="strong"><a href="#21c874112960c1457b60981a1b6698326a499b44" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="red strong">20.0 %</td>
-        <td>18</td>
+        <td>19</td>
         <td>15</td>
         <td>3</td>
         <td>12</td>
@@ -137,7 +137,7 @@
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
@@ -157,7 +157,7 @@
         <td>28</td>
         <td>28</td>
         <td>0</td>
-        <td>3325.0</td>
+        <td>3325.2</td>
       </tr>
       
       <tr>
@@ -308,7 +308,7 @@
       <tr>
         <td class="strong"><a href="#21c874112960c1457b60981a1b6698326a499b44" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="red strong">20.0 %</td>
-        <td>18</td>
+        <td>19</td>
         <td>15</td>
         <td>3</td>
         <td>12</td>
@@ -495,7 +495,7 @@
      covered at
      <span class="covered_strength">
        <span class="green">
-         1441.87
+         1442.03
        </span>
     </span> hits/line)
   </h2>
@@ -527,7 +527,7 @@
         <td>17</td>
         <td>17</td>
         <td>0</td>
-        <td>1.5</td>
+        <td>1.8</td>
       </tr>
       
       <tr>
@@ -547,7 +547,7 @@
         <td>28</td>
         <td>28</td>
         <td>0</td>
-        <td>3325.0</td>
+        <td>3325.2</td>
       </tr>
       
     </tbody>
@@ -1563,19 +1563,25 @@
           <code class="ruby">    user.save</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">    </code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="17">
           
           
           <code class="ruby">    user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="18">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -1608,7 +1614,7 @@
         <li class="covered" data-hits="1" data-linenumber="2">
           <span class="hits">1</span>
           
-          <code class="ruby">  attr_reader :view, :model</code>
+          <code class="ruby">  attr_reader :view, :current_user</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="3">
@@ -1626,25 +1632,25 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def initialize(model, view)</code>
+          <code class="ruby">  def initialize(current_user, view)</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="6">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="6">
+          <span class="hits">3</span>
           
           <code class="ruby">    @view = view</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="7">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="7">
+          <span class="hits">3</span>
           
-          <code class="ruby">    @model = model</code>
+          <code class="ruby">    @current_user = current_user</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="8">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="8">
+          <span class="hits">3</span>
           
-          <code class="ruby">    super(@model)</code>
+          <code class="ruby">    super(@current_user)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -1665,10 +1671,10 @@
           <code class="ruby">  def historical_events</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="12">
-          <span class="hits">2</span>
+        <li class="covered" data-hits="3" data-linenumber="12">
+          <span class="hits">3</span>
           
-          <code class="ruby">    @model.events</code>
+          <code class="ruby">    @current_user.events</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="13">
@@ -1734,7 +1740,7 @@
         <li class="never" data-hits="" data-linenumber="23">
           
           
-          <code class="ruby">    @model.events.select do |event|</code>
+          <code class="ruby">    @current_user.events.select do |event|</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="24">
@@ -2013,38 +2019,38 @@
           <code class="ruby">  def initialize(current_user)</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="8">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="8">
+          <span class="hits">7</span>
           
           <code class="ruby">    @current_user = current_user</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="9">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="9">
+          <span class="hits">7</span>
           
           <code class="ruby">    @connection = Faraday.new(url: &quot;https://api.meetup.com&quot;) do |faraday|</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="10">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="10">
+          <span class="hits">7</span>
           
           <code class="ruby">      faraday.adapter Faraday.default_adapter</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="11">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="11">
+          <span class="hits">7</span>
           
           <code class="ruby">      faraday.params[:key] = ENV[&quot;MEETUP_API_KEY&quot;]</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="12">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="12">
+          <span class="hits">7</span>
           
           <code class="ruby">      faraday.params[:sign] = &quot;true&quot;</code>
         </li>
       
-        <li class="covered" data-hits="6" data-linenumber="13">
-          <span class="hits">6</span>
+        <li class="covered" data-hits="7" data-linenumber="13">
+          <span class="hits">7</span>
           
           <code class="ruby">      faraday.params[:access_token] = current_user.token</code>
         </li>
