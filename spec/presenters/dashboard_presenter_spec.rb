@@ -1,25 +1,42 @@
 require 'rails_helper'
+require 'date'
 
 describe "DashboardPresenter" do
-
-  before do
-    @user = User.create(name: "Luke Mantree",
-                        meetup_id: 200961493,
-                        photo: "http://photos4.meetupstatic.com/photos/member/7/8/2/9/highres_254490761.jpeg",
-                        city: "Denver",
-                        state: "CO",
-                        country: "us",
-                        lat: 39.75,
-                        lon: 104.99,
-                        token: ENV["USER_TOKEN"])
-    @meetup_service = MeetupService.new(@user)
-    @presenter = DashboardPresenter.new(@user, "test")
-  end
-
   context "historical_events" do
     it "returns all user_events" do
-      ApplicationController.any_instance.stubs(:current_user).returns(@user)
-      expect(@presenter.historical_events.count).to eq(0)
+      user = create(:user_with_events)
+      expect(user.events.count).to eq(5)
+      presenter = DashboardPresenter.new(user, "test")
+      ApplicationController.any_instance.stubs(:current_user).returns(user)
+      expect(presenter.historical_events.count).to eq(5)
+      expect(user.events.first.id).to eq(presenter.historical_events.first.id)
+    end
+  end
+
+  context "display_local_time" do
+    it "converts to local time" do
+      user = create(:user_with_events)
+      event = user.events.first
+      presenter = DashboardPresenter.new(user, "test")
+      date_string = presenter.display_local_time(event)
+      expect(date_string).to eq("03/13/2016 10:26 am")
+    end
+  end
+
+  context "current_events" do
+    it "returns current events only" do
+      user = create(:user)
+      current_time = DateTime.now.strftime('%Q').to_i
+      matching_time = current_time + 86400000
+      failing_time = current_time + 864000000
+      matching_event = create(:event, time: matching_time, utc_offset: 0)
+      failing_event = create(:event, time: failing_time, utc_offset: 0)
+      user.events << matching_event << failing_event
+      presenter = DashboardPresenter.new(user, "test")
+      matches = presenter.current_events
+      expect(user.events.count).to eq(2)
+      expect(matches.count).to eq(1)
+      expect(matches.first.id).to eq(matching_event.id)
     end
   end
 end

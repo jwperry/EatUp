@@ -13,7 +13,6 @@ class User < ActiveRecord::Base
     user.photo = user_info[:photo][:photo_link]
     user.token = response[:access_token]
     user.save
-    
     user
   end
 end
