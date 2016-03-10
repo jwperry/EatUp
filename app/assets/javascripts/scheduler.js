@@ -1,5 +1,4 @@
-$(function(){
-  
+$(function(){  
   $(".scheduler-events-card-wrapper").on("click", ".scheduler-event-wrapper", function(){
     $(this).hide().appendTo(".scheduler-selected-card-wrapper").fadeIn("slow");
   });

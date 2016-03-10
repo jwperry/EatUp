@@ -8,10 +8,9 @@
             <%= event[:group][:name] %>
             <%= @presenter.display_local_time(event) %>
           </h4>
-          <h5>
-            <%= event[:description][0..250] %>
-            <%= "..." if event[:description].length > 250 %>
-          </h5>
+          <div class="description-text">
+            <%= event[:description] %>
+          </div>
         </div>
       <% end %>
   </div>"
