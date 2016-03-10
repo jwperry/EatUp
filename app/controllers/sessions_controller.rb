@@ -38,9 +38,7 @@ class SessionsController < ApplicationController
       faraday.params[:grant_type] = "authorization_code"
       faraday.params[:redirect_uri] = "#{ENV['HOST']}/login"
     end
-    response = JSON.parse(conn.post("https://secure.meetup.com/oauth2/access").body, symbolize_names: true)
-    conn = nil
-    response
+    JSON.parse(conn.post("https://secure.meetup.com/oauth2/access").body, symbolize_names: true)
   end
 
   def request_user_info(token)
@@ -50,8 +48,6 @@ class SessionsController < ApplicationController
       faraday.params[:sign] = "true"
       faraday.params[:access_token] = token
     end
-    user_info = JSON.parse(conn.get("/members/self").body, symbolize_names: true)
-    conn = nil
-    user_info
+    JSON.parse(conn.get("/members/self").body, symbolize_names: true)
   end
 end

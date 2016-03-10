@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-09T16:29:55-07:00">2016-03-09T16:29:55-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2016-03-09T20:29:08-07:00">2016-03-09T20:29:08-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">59.06%</span></span>
+    (<span class="covered_percent"><span class="red">57.71%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         565.32
+         552.39
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>12</b> files in total.
-    <b>171</b> relevant lines. 
+    <b>175</b> relevant lines. 
     <span class="green"><b>101</b> lines covered</span> and
-    <span class="red"><b>70</b> lines missed </span>
+    <span class="red"><b>74</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -73,10 +73,10 @@
       <tr>
         <td class="strong"><a href="#508b9bc05db616d5589087760b2429398a8a368b" class="src_link" title="app/controllers/sessions_controller.rb">app/controllers/sessions_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>53</td>
-        <td>53</td>
+        <td>57</td>
+        <td>57</td>
         <td>0</td>
-        <td>53</td>
+        <td>57</td>
         <td>0.0</td>
       </tr>
       
@@ -179,20 +179,20 @@
           <div class="file_list_container" id="Controllers">
   <h2>
     <span class="group_name">Controllers</span>
-    (<span class="covered_percent"><span class="red">27.5%</span></span>
+    (<span class="covered_percent"><span class="red">26.19%</span></span>
      covered at
      <span class="covered_strength">
        <span class="red">
-         0.32
+         0.31
        </span>
     </span> hits/line)
   </h2>
   <a name="Controllers"></a>
   <div>
     <b>5</b> files in total.
-    <b>80</b> relevant lines. 
+    <b>84</b> relevant lines. 
     <span class="green"><b>22</b> lines covered</span> and
-    <span class="red"><b>58</b> lines missed </span>
+    <span class="red"><b>62</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -231,10 +231,10 @@
       <tr>
         <td class="strong"><a href="#508b9bc05db616d5589087760b2429398a8a368b" class="src_link" title="app/controllers/sessions_controller.rb">app/controllers/sessions_controller.rb</a></td>
         <td class="red strong">0.0 %</td>
-        <td>53</td>
-        <td>53</td>
+        <td>57</td>
+        <td>57</td>
         <td>0</td>
-        <td>53</td>
+        <td>57</td>
         <td>0.0</td>
       </tr>
       
@@ -762,9 +762,9 @@
     <h3>app/controllers/sessions_controller.rb</h3>
     <h4><span class="red">0.0 %</span> covered</h4>
     <div>
-      <b>53</b> relevant lines. 
+      <b>57</b> relevant lines. 
       <span class="green"><b>0</b> lines covered</span> and
-      <span class="red"><b>53</b> lines missed.</span>
+      <span class="red"><b>57</b> lines missed.</span>
     </div>
   </div>
   
@@ -1014,76 +1014,100 @@
         <li class="missed" data-hits="0" data-linenumber="41">
           
           
-          <code class="ruby">    JSON.parse(conn.post(&quot;https://secure.meetup.com/oauth2/access&quot;).body, symbolize_names: true)</code>
+          <code class="ruby">    response = JSON.parse(conn.post(&quot;https://secure.meetup.com/oauth2/access&quot;).body, symbolize_names: true)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="42">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    conn = nil</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="43">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    response</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="44">
           
           
-          <code class="ruby">  def request_user_info(token)</code>
+          <code class="ruby">  end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="45">
           
           
-          <code class="ruby">    conn = Faraday.new(url: &quot;https://api.meetup.com&quot;) do |faraday|</code>
+          <code class="ruby"></code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="46">
           
           
-          <code class="ruby">      faraday.adapter Faraday.default_adapter</code>
+          <code class="ruby">  def request_user_info(token)</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="47">
           
           
-          <code class="ruby">      faraday.params[:key] = ENV[&quot;MEETUP_API_KEY&quot;]</code>
+          <code class="ruby">    conn = Faraday.new(url: &quot;https://api.meetup.com&quot;) do |faraday|</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="48">
           
           
-          <code class="ruby">      faraday.params[:sign] = &quot;true&quot;</code>
+          <code class="ruby">      faraday.adapter Faraday.default_adapter</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="49">
           
           
-          <code class="ruby">      faraday.params[:access_token] = token</code>
+          <code class="ruby">      faraday.params[:key] = ENV[&quot;MEETUP_API_KEY&quot;]</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="50">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      faraday.params[:sign] = &quot;true&quot;</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="51">
           
           
-          <code class="ruby">    JSON.parse(conn.get(&quot;/members/self&quot;).body, symbolize_names: true)</code>
+          <code class="ruby">      faraday.params[:access_token] = token</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="52">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="53">
+          
+          
+          <code class="ruby">    user_info = JSON.parse(conn.get(&quot;/members/self&quot;).body, symbolize_names: true)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="54">
+          
+          
+          <code class="ruby">    conn = nil</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="55">
+          
+          
+          <code class="ruby">    user_info</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="56">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="57">
           
           
           <code class="ruby">end</code>
